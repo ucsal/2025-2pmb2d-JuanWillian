@@ -5,7 +5,6 @@ public class EmailNotifier {
 
 	public EmailNotifier() {
 		if ("true".equalsIgnoreCase(System.getProperty("DRY_RUN"))) {
-			// Estado inicial: ainda assim usa SMTP real (bug proposital)
 			this.mailSender = new AlternativeClient();
 		} else {
 			this.mailSender = new SmtpClient();
